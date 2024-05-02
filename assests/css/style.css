@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(grey, skyblue);
+    color: white;
+    font-family: "Poppins", sans-serif
+}
+
+textarea {
+    opacity: 0
+}
+
+#maindiv,
+#maindiv #top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+#maindiv #top {
+    height: 100vh;
+    transition: height .7s
+}
+
+h1 {
+    font-size: 60px;
+    color: #2e2f4a;
+}
+h2{
+    color: #2e2f4a;
+}
+
+.input-box {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="button"] {
+    padding: 10px;
+    font-size: 25px;
+    outline: none;
+    border: none;
+    font-family: "Open Sans"
+}
+
+input[type="text"] {
+    border-radius: 10px;
+    color: #2e2f4a;
+    transition: width .7s
+}
+
+input[type="text"]:disabled {
+    background-color: #c8d0de
+}
+
+input[type="button"] {
+    border-radius: 10px;
+    background-color: #171721;
+    color: white
+}
+
+input[type="button"]:hover {
+    cursor: pointer;
+    background-color: #0e0e14
+}
+
+input[type="button"]:disabled {
+    background-color: #424247
+}
+
+#url {
+    width: 1100px;
+    margin-right: 0;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 24px;
+}
+
+#submit{
+    color: #000000;
+    background: rgb(104, 104, 104);
+}
+#submit:hover{
+    color: white;
+    background: rgb(5, 2, 43);
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 1250px) {
+    #maindiv,
+    #maindiv #top,
+    #top {
+        width: 100vw
+    }
+    .input-box,
+    .options {
+        width: 1000px
+    }
+    #url {
+        width: 900px
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .options #body {
+        grid-template-columns: 1fr 1fr
+    }
+    #qr-code-wrapper {
+        display: none
+    }
+    h1 {
+        font-size: 50px
+    }
+    #maindiv,
+    #maindiv #top,
+    #top {
+        width: 100vw
+    }
+    .input-box,
+    .options {
+        width: 800px
+    }
+    #url {
+        width: 700px
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    h1 {
+        font-size: 50px
+    }
+    #maindiv,
+    #maindiv #top,
+    #top {
+        width: 100vw
+    }
+    .input-box,
+    .options {
+        max-width: 95vw
+    }
+    #url {
+        width: calc(100% - 100px)
+    }
+    h1 span::after {
+        content: "| URL shortener"
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .options #body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr
+    }
+    .options #body .options-left,
+    .options #body #custom-url,
+    .options #body #submit {
+        width: 100%
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 span::after {
+        content: none
+    }
+    input[type="text"],
+    input[type="button"],
+    .options #body .options-left input {
+        font-size: 20px
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #output-wrapper {
+        width: 100%
+    }
+    #copy {
+        width: 75px
+    }
+    .options #body #output {
+        box-sizing: border-box;
+        width: calc(100% - 75px)
+    }
+}
+
+#anchorTagContainer {
+    overflow-y: auto;
+    height: 120px;
+}
